@@ -10,7 +10,8 @@
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:polywrap-vscode-ext.helloWorld"
+        "onCommand:polywrap-vscode-ext.helloWorld",
+		"onView:nodeDependencies"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
@@ -19,7 +20,26 @@
 				"command": "polywrap-vscode-ext.helloWorld",
 				"title": "Hello World"
 			}
-		]
+		],
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "polywrap",
+					"title": "Polywrap",
+					"icon": "media/dep.svg"
+				}
+			]
+		},
+		"views": {
+			"polywrap": [
+				{
+					"id": "nodeDependencies",
+					"name": "Explorer",
+					"icon": "media/dep.svg",
+					"contextualTitle": "Polywrap"
+				}
+			]
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run package",
