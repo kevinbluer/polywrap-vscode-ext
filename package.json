@@ -36,13 +36,13 @@
       "polywrap": [
         {
           "id": "nodeDependencies",
-          "name": "Explorer",
+          "name": "Wrapper Explorer",
           "icon": "media/dep.svg",
           "contextualTitle": "Polywrap"
         },
 				{
 					"id": "testViewDragAndDrop",
-					"name": "Wrappers"
+					"name": "API"
 				},   
         {
           "id": "testView",

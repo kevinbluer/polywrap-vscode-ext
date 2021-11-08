@@ -43,7 +43,7 @@ export class TestView {
 }
 
 const treeUniswap = {
-	'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ': {
+	'Initializes a class instance from two Tokens, if the pair\'s balances of these tokens are unknown and cannot be fetched externally. ': {
 	}
 };
 

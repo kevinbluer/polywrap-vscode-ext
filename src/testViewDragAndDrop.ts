@@ -1,4 +1,5 @@
 import * as vscode from 'vscode';
+import * as path from 'path';
 
 export class TestViewDragAndDrop implements vscode.TreeDataProvider<Node>, vscode.DragAndDropController<Node> {
 	supportedTypes = ['text/treeitems'];
@@ -6,27 +7,39 @@ export class TestViewDragAndDrop implements vscode.TreeDataProvider<Node>, vscod
 	// We want to use an array as the event type, so we use the proposed onDidChangeTreeData2.
 	public onDidChangeTreeData2: vscode.Event<Node[] | undefined> = this._onDidChangeTreeData.event;
 	public tree = {
-		'bestTradeExactIn': {
-			'client.query({\nuri: \'ens/api.helloworld.web3api.eth\'...': {}
+		'fetchPairData': {
+			'fetchPairData(...)': {}
 		},
-		'swapCallParameters': {
+		'bestTradeExactIn': {
+			'...': {}
+		},
+		'pairOutputAmount': {
 			'....': {}
 		},
-		'execCall': {
-			'.....,': {}
-		}	
+		'swapCallParameters': {
+			'.....': {}
+		},
+		'swap': {
+			'......,': {}
+		}
 	};
 
 	public treeUniswap = {
-		'bestTradeExactIn': {
-			'client.query({\nuri: \'ens/api.helloworld.web3api.eth\'...': {}
+		'fetchPairData': {
+			'fetchPairData(...)': {}
 		},
-		'swapCallParameters': {
+		'bestTradeExactIn': {
+			'...': {}
+		},
+		'pairOutputAmount': {
 			'....': {}
 		},
-		'execCall': {
-			'.....,': {}
-		}	
+		'swapCallParameters': {
+			'.....': {}
+		},
+		'swap': {
+			'......,': {}
+		}
 	};	
 	
 	public treeEns = {
@@ -93,7 +106,10 @@ export class TestViewDragAndDrop implements vscode.TreeDataProvider<Node>, vscod
 	}
 
 	public async onDrop(sources: vscode.TreeDataTransfer, target: Node): Promise<void> {
-		vscode.env.clipboard.writeText('client.query({\nuri: \'ens/api.helloworld.web3api.eth');
+		vscode.env.clipboard.writeText(`fetchPairData(
+			token0: $token0
+			token1: $token1
+		)`);
 		const treeItems = JSON.parse(await sources.items.get('text/treeitems')!.asString());
 		let roots = this._getLocalRoots(treeItems);
 		// Remove nodes that are already target's parent nodes

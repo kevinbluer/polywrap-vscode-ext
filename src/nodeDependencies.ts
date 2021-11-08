@@ -47,10 +47,12 @@ export class DepNodeProvider implements vscode.TreeDataProvider<Dependency> {
 
 const wrappers = {
     "dependencies": {
-        "Uniswap": "17.2.1",
+        "Uniswap": "0.3.0",
         "ENS": "0.0.3",
-        "OpenSea": "1.2.4",
-        "Snapshot": "5.2.1"
+        "OpenSea": "0.2.4",
+        "Radicle": "0.2.1",
+		"Bankless": "0.1.8",
+		"BadgerDAO": "0.0.8"
       }
 };
 
